@@ -119,3 +119,34 @@ main .wrapper div.tasksInfo div span {
     line-height: 14.52px;
     color: var(--gray-200);
 }
+
+main .wrapper div.emptyListTasks {
+    border-top: 2px solid var(--gray-500);
+    border-radius: 8px;
+    height: 15.25rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+main .wrapper div.emptyListTasks img {
+    height: 3.5rem;
+    width: 3.5rem;
+    margin-bottom: 1rem;
+}
+
+main .wrapper div.emptyListTasks strong {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 1rem;
+    line-height: 22.4px;
+    color: var(--gray-300);
+}
+
+main .wrapper div.emptyListTasks span {
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+    line-height: 22.4px;
+    color: var(--gray-300);
+}

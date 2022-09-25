@@ -1,3 +1,4 @@
+import clipboard from './assets/clipboard.svg';
 import logo from './assets/rocket.svg';
 import plus from './assets/plus.svg';
 import styles from './App.module.css';
@@ -35,6 +36,15 @@ function App() {
                 <span className={styles.quantityTasks}>53 de 100</span>
               </div>
             </div>
+          </div>
+          <div className={styles.emptyListTasks}>
+            <img src={clipboard} />
+            <strong>
+              Você ainda não tem tarefas cadastradas
+            </strong>
+            <span>
+              Crie tarefas e organize seus itens a fazer
+            </span>
           </div>
         </div>
       </main>
