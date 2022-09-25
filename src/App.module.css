@@ -1,0 +1,5 @@
+.mainHeader {
+    height: 12.5rem;
+    background-color: var(--gray-700);
+    display: flex;
+}
