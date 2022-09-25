@@ -13,7 +13,7 @@ function App() {
         <p className={styles.purpleText}>do</p>
       </header>
 
-      <main>
+      <main className={styles.main}>
         <div className={styles.wrapper}>
           <form>
             <input type="text" placeholder='Adicione uma nova tarefa' />
@@ -22,6 +22,20 @@ function App() {
               <img src={plus} alt="" />
             </button>
           </form>
+          <div className={styles.tasksInfo}>
+            <div>
+              <p className={styles.blueText}>Tarefas criadas</p>
+              <div className={styles.quantityBorder}>
+                <span className={styles.quantityTasks}>0</span>
+              </div>
+            </div>
+            <div>
+              <p className={styles.purpleText}>Concluídas</p>
+              <div className={styles.quantityBorder}>
+                <span className={styles.quantityTasks}>53 de 100</span>
+              </div>
+            </div>
+          </div>
         </div>
       </main>
     </div>

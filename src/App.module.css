@@ -28,14 +28,20 @@
 }
 
 .wrapper {
-    max-width: 68rem;
+    max-width: 46rem;
     margin: 0 auto;
+    padding: 0 1rem;
+}
+
+main {
+    margin-top: -1.6875rem;
 }
 
 main .wrapper form {
     display: flex;
     justify-content: center;
     gap: 0.5rem;
+    margin-bottom: 4rem;
 }
 
 main .wrapper form input {
@@ -67,4 +73,49 @@ main .wrapper form button {
     color: var(--gray-100);
     line-height: 19.6px;
     cursor: pointer;
+}
+
+main .wrapper div.tasksInfo {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1.5rem;
+}
+
+main .wrapper div.tasksInfo div {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+main .wrapper div.tasksInfo div p {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 0.875rem;
+    line-height: 16.94px;
+}
+
+main .wrapper div.tasksInfo div p.blueText {
+    color: var(--blue-500);
+}
+
+main .wrapper div.tasksInfo div p.purpleText {
+    color: var(--purple-500);
+}
+
+main .wrapper div.tasksInfo div div.quantityBorder {
+    min-width: 1.5625rem;
+    height: 1.1875rem;
+    background-color: var(--gray-400);
+    display: flex;
+    justify-content: center;
+    padding: 0.125rem 0.5rem;
+    border-radius: 999px;
+}
+
+main .wrapper div.tasksInfo div span {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 0.75rem;
+    line-height: 14.52px;
+    color: var(--gray-200);
 }
