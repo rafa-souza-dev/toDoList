@@ -63,6 +63,7 @@ main .wrapper form button {
     border-radius: 8px;
     width: 5.625rem;
     height: 3.25rem;
+    padding: 1rem;
     display: flex;
     justify-content: center;
     align-items: center;
