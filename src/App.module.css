@@ -26,3 +26,45 @@
 .mainHeader p.purpleText {
     color: var(--purple-800);
 }
+
+.wrapper {
+    max-width: 68rem;
+    margin: 0 auto;
+}
+
+main .wrapper form {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+main .wrapper form input {
+    width: 39.875rem;
+    height: 3.375rem;
+    border: 1px solid var(--gray-700);
+    border-radius: 8px;
+    background-color: var(--gray-500);
+    padding: 1rem;
+    font-size: 1rem;
+    line-height: 22.4px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+}
+
+main .wrapper form button {
+    background-color: var(--blue-800);
+    border: 0;
+    border-radius: 8px;
+    width: 5.625rem;
+    height: 3.25rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.875rem;
+    font-weight: 700;
+    font-family: 'Inter', sans-serif;
+    color: var(--gray-100);
+    line-height: 19.6px;
+    cursor: pointer;
+}
