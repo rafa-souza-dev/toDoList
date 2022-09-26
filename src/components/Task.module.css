@@ -1,0 +1,56 @@
+div.task {
+    height: 4.5rem;
+    background-color: var(--gray-500);
+    border: 1px solid var(--gray-400);
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 1rem 0 1rem;
+    /* align-items: center; */
+    gap: 0.75rem;
+}
+
+div.task div.boxLeft {
+    height: 1.5rem;
+    width: 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+div.task div.boxLeft div.taskCheckbox {
+    height: 1.090625rem;
+    width: 1.090625rem;
+    border-radius: 50%;
+    border: 2px solid var(--blue-500);
+    /* margin: 1.204375rem 0 0 1.204375rem; */
+}
+
+div.task div.boxMid {
+    width: 39.5rem;
+    height: 2.5rem;
+}
+
+div.task div.boxMid p.taskContent {
+    text-align: left;
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: 0.875rem;
+    line-height: 19.6px;
+    color: var(--gray-100);
+    /* margin: 1rem 0.75rem; */
+}
+
+div.task div.boxRight {
+    height: 1.5rem;
+    width: 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+div.task div.boxRight img {
+    height: 0.875rem;
+    width: 0.78rem;
+    /* margin: 1.3125rem 1.345rem 0 0; */
+}
