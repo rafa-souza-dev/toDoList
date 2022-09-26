@@ -23,7 +23,13 @@ div.task div.boxLeft div.taskCheckbox {
     width: 1.090625rem;
     border-radius: 50%;
     border: 2px solid var(--blue-500);
+    cursor: pointer;
     /* margin: 1.204375rem 0 0 1.204375rem; */
+}
+
+div.task div.boxLeft div.taskCheckbox:hover {
+    background-color: rgba(30, 111, 159, 0.2);
+    border: 2px solid var(--blue-800);
 }
 
 div.task div.boxMid {
@@ -52,5 +58,6 @@ div.task div.boxRight {
 div.task div.boxRight img {
     height: 0.875rem;
     width: 0.78rem;
+    cursor: pointer;
     /* margin: 1.3125rem 1.345rem 0 0; */
 }
