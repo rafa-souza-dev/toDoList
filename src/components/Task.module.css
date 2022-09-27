@@ -10,7 +10,7 @@ div.task {
     gap: 0.75rem;
 }
 
-div.taskConcluded {
+div.taskCompleted {
     height: 4.5rem;
     background-color: var(--gray-500);
     /* border: 1px solid var(--gray-400); */
@@ -44,7 +44,7 @@ div.task div.boxLeft div.taskCheckbox:hover {
     border: 2px solid var(--blue-800);
 }
 
-div.task div.boxLeft div.taskConcludedCheckbox {
+div.task div.boxLeft div.taskCompletedCheckbox {
     height: 1.090625rem;
     width: 1.090625rem;
     border-radius: 50%;
@@ -57,7 +57,7 @@ div.task div.boxLeft div.taskConcludedCheckbox {
     /* margin: 1.204375rem 0 0 1.204375rem; */
 }
 
-div.task div.boxLeft div.taskConcludedCheckbox:hover {
+div.task div.boxLeft div.taskCompletedCheckbox:hover {
     background-color: var(--purple-500);
     border: 2px solid var(--purple-500);
 }
