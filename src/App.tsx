@@ -52,6 +52,12 @@ function App() {
     return completedTasks.length;
   }
 
+  function renderNumberOfCompletedTasks () {
+    if (tasks.length == 0) return "0";
+
+    return `${getNumberOfCompletedTasks()} de ${tasks.length}`;
+  }
+
   return (
     <div>
       <header className={styles.mainHeader}>
@@ -79,7 +85,7 @@ function App() {
             <div>
               <p className={styles.purpleText}>Concluídas</p>
               <div className={styles.quantityBorder}>
-                <span className={styles.quantityTasks}>{getNumberOfCompletedTasks()} de {tasks.length}</span>
+                <span className={styles.quantityTasks}>{renderNumberOfCompletedTasks()}</span>
               </div>
             </div>
           </div>
