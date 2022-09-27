@@ -103,7 +103,8 @@ function App() {
             :
             <div className={styles.nonEmptyListTasks}>
               {tasks.map(task => (
-                <Task 
+                <Task
+                  key={task.uuid}
                   uuid={task.uuid}
                   content={task.content}
                   isCompleted={task.isCompleted}
