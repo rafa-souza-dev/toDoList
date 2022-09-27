@@ -1,4 +1,5 @@
 import { v4 as uuidv4 } from 'uuid';
+import vIcon from '../assets/v.svg'
 import iconTrash from '../assets/iconTrash.svg';
 import styles from './Task.module.css';
 
@@ -38,7 +39,7 @@ export const Task = (props: TaskProps) => {
         <div className={styles.taskCompleted}>
             <div className={styles.boxLeft}>
                 <div className={styles.taskCompletedCheckbox}>
-
+                    <img src={vIcon} alt="Ícone de verificado" />
                 </div>
             </div>
             <div className={styles.boxMid}>

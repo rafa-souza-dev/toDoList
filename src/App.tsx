@@ -1,11 +1,51 @@
+import React, { useState } from 'react';
+import { v4 as uuidv4 } from 'uuid';
 import clipboard from './assets/clipboard.svg';
 import logo from './assets/rocket.svg';
 import plus from './assets/plus.svg';
 import styles from './App.module.css';
+import { Task, TaskProps } from './components/Task';
 
 import './global.css';
 
 function App() {
+
+  const [tasks, setTasks] = useState<TaskProps[]>([
+    {
+      uuid: uuidv4(),
+      content: "Tarefinha"
+    },
+    {
+      uuid: uuidv4(),
+      content: "Tarefinha"
+    },
+    {
+      uuid: uuidv4(),
+      content: "Tarefinha",
+      isCompleted: true
+    },
+    {
+      uuid: uuidv4(),
+      content: "Tarefinha",
+      isCompleted: true
+    },
+    {
+      uuid: uuidv4(),
+      content: "Tarefinha",
+      isCompleted: true
+    },
+    {
+      uuid: uuidv4(),
+      content: "Tarefinha",
+      isCompleted: true
+    },
+    {
+      uuid: uuidv4(),
+      content: "Tarefinha",
+      isCompleted: true
+    },
+  ]);
+
   return (
     <div>
       <header className={styles.mainHeader}>
@@ -37,15 +77,28 @@ function App() {
               </div>
             </div>
           </div>
-          <div className={styles.emptyListTasks}>
-            <img src={clipboard} />
-            <strong>
-              Você ainda não tem tarefas cadastradas
-            </strong>
-            <span>
-              Crie tarefas e organize seus itens a fazer
-            </span>
-          </div>
+          {
+            tasks.length == 0 ?
+            <div className={styles.emptyListTasks}>
+              <img src={clipboard} />
+              <strong>
+                Você ainda não tem tarefas cadastradas
+              </strong>
+              <span>
+                Crie tarefas e organize seus itens a fazer
+              </span>
+            </div>
+            :
+            <div className={styles.nonEmptyListTasks}>
+              {tasks.map(task => (
+                <Task 
+                  uuid={task.uuid}
+                  content={task.content}
+                  isCompleted={task.isCompleted}
+                />
+              ))}
+            </div>
+          }
         </div>
       </main>
     </div>

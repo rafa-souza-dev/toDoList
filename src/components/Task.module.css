@@ -22,7 +22,7 @@ div.taskCompleted {
     gap: 0.75rem;
 }
 
-div.task div.boxLeft {
+div.boxLeft {
     height: 1.5rem;
     width: 1.5rem;
     display: flex;
@@ -44,7 +44,7 @@ div.task div.boxLeft div.taskCheckbox:hover {
     border: 2px solid var(--blue-800);
 }
 
-div.task div.boxLeft div.taskCompletedCheckbox {
+div.taskCompletedCheckbox {
     height: 1.090625rem;
     width: 1.090625rem;
     border-radius: 50%;
@@ -57,12 +57,12 @@ div.task div.boxLeft div.taskCompletedCheckbox {
     /* margin: 1.204375rem 0 0 1.204375rem; */
 }
 
-div.task div.boxLeft div.taskCompletedCheckbox:hover {
+div.taskCompletedCheckbox:hover {
     background-color: var(--purple-500);
     border: 2px solid var(--purple-500);
 }
 
-div.task div.boxMid {
+div.boxMid {
     width: 39.5rem;
     height: 2.5rem;
 }
@@ -77,7 +77,7 @@ div.task div.boxMid p.taskContent {
     /* margin: 1rem 0.75rem; */
 }
 
-div.task div.boxMid p.taskCompletedContent {
+p.taskCompletedContent {
     text-align: left;
     font-family: 'Inter', sans-serif;
     font-weight: 400;
@@ -88,7 +88,7 @@ div.task div.boxMid p.taskCompletedContent {
     /* margin: 1rem 0.75rem; */
 }
 
-div.task div.boxRight {
+div.boxRight {
     height: 1.5rem;
     width: 1.5rem;
     display: flex;
