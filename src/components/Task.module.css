@@ -77,6 +77,17 @@ div.task div.boxMid p.taskContent {
     /* margin: 1rem 0.75rem; */
 }
 
+div.task div.boxMid p.taskCompletedContent {
+    text-align: left;
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: 0.875rem;
+    line-height: 19.6px;
+    color: var(--gray-300);
+    text-decoration: line-through;
+    /* margin: 1rem 0.75rem; */
+}
+
 div.task div.boxRight {
     height: 1.5rem;
     width: 1.5rem;
