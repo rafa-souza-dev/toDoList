@@ -46,6 +46,12 @@ function App() {
     },
   ]);
 
+  function getNumberOfCompletedTasks () {
+    let completedTasks = tasks.filter(task => task.isCompleted);
+
+    return completedTasks.length;
+  }
+
   return (
     <div>
       <header className={styles.mainHeader}>
@@ -67,13 +73,13 @@ function App() {
             <div>
               <p className={styles.blueText}>Tarefas criadas</p>
               <div className={styles.quantityBorder}>
-                <span className={styles.quantityTasks}>0</span>
+                <span className={styles.quantityTasks}>{tasks.length}</span>
               </div>
             </div>
             <div>
               <p className={styles.purpleText}>Concluídas</p>
               <div className={styles.quantityBorder}>
-                <span className={styles.quantityTasks}>53 de 100</span>
+                <span className={styles.quantityTasks}>{getNumberOfCompletedTasks()} de {tasks.length}</span>
               </div>
             </div>
           </div>
