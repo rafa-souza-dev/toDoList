@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { FormEvent, useState, ChangeEvent } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 import clipboard from './assets/clipboard.svg';
 import logo from './assets/rocket.svg';
@@ -10,41 +10,8 @@ import './global.css';
 
 function App() {
 
-  const [tasks, setTasks] = useState<TaskProps[]>([
-    {
-      uuid: uuidv4(),
-      content: "Tarefinha"
-    },
-    {
-      uuid: uuidv4(),
-      content: "Tarefinha"
-    },
-    {
-      uuid: uuidv4(),
-      content: "Tarefinha",
-      isCompleted: true
-    },
-    {
-      uuid: uuidv4(),
-      content: "Tarefinha",
-      isCompleted: true
-    },
-    {
-      uuid: uuidv4(),
-      content: "Tarefinha",
-      isCompleted: true
-    },
-    {
-      uuid: uuidv4(),
-      content: "Tarefinha",
-      isCompleted: true
-    },
-    {
-      uuid: uuidv4(),
-      content: "Tarefinha",
-      isCompleted: true
-    },
-  ]);
+  const [taskTextInput, setTaskTextInput] = useState("");
+  const [tasks, setTasks] = useState<TaskProps[]>([]);
 
   function getNumberOfCompletedTasks () {
     let completedTasks = tasks.filter(task => task.isCompleted);
@@ -58,6 +25,22 @@ function App() {
     return `${getNumberOfCompletedTasks()} de ${tasks.length}`;
   }
 
+  function handleCreateNewTask(event: FormEvent) {
+    event.preventDefault();
+
+    setTasks([...tasks, {
+      uuid: uuidv4(),
+      isCompleted: false,
+      content: taskTextInput,
+    }]);
+
+    setTaskTextInput('');
+  }
+
+  function handleChangeNewTask (event: ChangeEvent<HTMLInputElement>) {
+    setTaskTextInput(event.target.value);
+  }
+
   return (
     <div>
       <header className={styles.mainHeader}>
@@ -68,8 +51,13 @@ function App() {
 
       <main className={styles.main}>
         <div className={styles.wrapper}>
-          <form>
-            <input type="text" placeholder='Adicione uma nova tarefa' />
+          <form onSubmit={handleCreateNewTask}>
+            <input 
+              type="text" 
+              placeholder='Adicione uma nova tarefa'
+              value={taskTextInput}
+              onChange={handleChangeNewTask}
+            />
             <button>
               Criar
               <img src={plus} alt="" />
