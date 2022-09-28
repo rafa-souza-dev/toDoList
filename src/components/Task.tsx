@@ -2,6 +2,7 @@ import { v4 as uuidv4 } from 'uuid';
 import vIcon from '../assets/v.svg'
 import iconTrash from '../assets/iconTrash.svg';
 import styles from './Task.module.css';
+import { Trash } from "phosphor-react";
 
 export interface TaskProps {
     uuid?: string
@@ -33,9 +34,9 @@ export const Task = (props: TaskProps) => {
                     {content}
                 </p>
             </div>
-            <div className={styles.boxRight}>
-                <img onClick={() => deleteTask(uuid)} src={iconTrash} alt="Ícone de Lixeira" />
-            </div>
+            <button className={styles.boxRight} title="Deletar Tarefa" onClick={() => deleteTask(uuid)}>
+                <Trash size={16}/>
+            </button>
         </div>        
     )
 
@@ -51,9 +52,9 @@ export const Task = (props: TaskProps) => {
                     {content}
                 </p>
             </div>
-            <div className={styles.boxRight}>
-                <img onClick={() => deleteTask(uuid)} src={iconTrash} alt="Ícone de Lixeira" />
-            </div>
+            <button className={styles.boxRight} title="Deletar Tarefa" onClick={() => deleteTask(uuid)}>
+                <Trash size={16}/>
+            </button>
         </div>
     )
 }
