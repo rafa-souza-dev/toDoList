@@ -24,6 +24,10 @@
     --danger-500: #E25858;
 }
 
+:focus {
+    outline: transparent;
+}
+
 body {
     background-color: var(--gray-600);
     -webkit-font-smoothing: antialiased !important;
