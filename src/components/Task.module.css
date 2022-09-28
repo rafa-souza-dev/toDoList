@@ -96,7 +96,7 @@ div.boxRight {
     align-items: center;
 }
 
-div.task div.boxRight img {
+div.boxRight img {
     height: 0.875rem;
     width: 0.78rem;
     cursor: pointer;

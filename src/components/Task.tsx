@@ -8,6 +8,7 @@ export interface TaskProps {
     content: string
     isCompleted?: boolean
     deleteTask: (uuid: string) => void
+    editTask: (uuid: string) => void
 };
 
 export const Task = (props: TaskProps) => {
@@ -16,13 +17,14 @@ export const Task = (props: TaskProps) => {
         content,
         isCompleted=false,
         uuid=uuidv4(),
-        deleteTask
+        deleteTask,
+        editTask
     } = props;
 
     if (!isCompleted) return (
         <div className={styles.task}>
             <div className={styles.boxLeft}>
-                <div className={styles.taskCheckbox}>
+                <div onClick={() => editTask(uuid)} className={styles.taskCheckbox}>
 
                 </div>
             </div>
@@ -31,8 +33,8 @@ export const Task = (props: TaskProps) => {
                     {content}
                 </p>
             </div>
-            <div onClick={() => deleteTask(uuid)} className={styles.boxRight}>
-                <img src={iconTrash} alt="Ícone de Lixeira" />
+            <div className={styles.boxRight}>
+                <img onClick={() => deleteTask(uuid)} src={iconTrash} alt="Ícone de Lixeira" />
             </div>
         </div>        
     )
@@ -41,7 +43,7 @@ export const Task = (props: TaskProps) => {
         <div className={styles.taskCompleted}>
             <div className={styles.boxLeft}>
                 <div className={styles.taskCompletedCheckbox}>
-                    <img src={vIcon} alt="Ícone de verificado" />
+                    <img onClick={() => editTask(uuid)} src={vIcon} alt="Ícone de verificado" />
                 </div>
             </div>
             <div className={styles.boxMid}>
@@ -50,7 +52,7 @@ export const Task = (props: TaskProps) => {
                 </p>
             </div>
             <div className={styles.boxRight}>
-                <img src={iconTrash} alt="Ícone de Lixeira" />
+                <img onClick={() => deleteTask(uuid)} src={iconTrash} alt="Ícone de Lixeira" />
             </div>
         </div>
     )

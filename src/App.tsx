@@ -32,7 +32,8 @@ function App() {
       uuid: uuidv4(),
       isCompleted: false,
       content: taskTextInput,
-      deleteTask: handleDeleteTask
+      deleteTask: handleDeleteTask,
+      editTask: handleEditTask
     }]);
 
     setTaskTextInput('');
@@ -44,6 +45,18 @@ function App() {
 
   function handleDeleteTask(uuid: string) {
     setTasks(tasks.filter(task => task.uuid !== uuid));
+  }
+
+  function editTaskStatus(task: TaskProps, uuid: string) {
+    if (task.uuid === uuid) {
+      task.isCompleted = !task.isCompleted;
+    }
+    
+    return task
+  }
+
+  function handleEditTask(uuid: string) {
+    setTasks(tasks.map(task => editTaskStatus(task, uuid)));
   }
 
   return (
@@ -102,6 +115,7 @@ function App() {
                   content={task.content}
                   isCompleted={task.isCompleted}
                   deleteTask={handleDeleteTask}
+                  editTask={handleEditTask}
                 />
               ))}
             </div>
