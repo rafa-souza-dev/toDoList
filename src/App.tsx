@@ -13,13 +13,13 @@ function App() {
   const [taskTextInput, setTaskTextInput] = useState("");
   const [tasks, setTasks] = useState<TaskProps[]>([]);
 
-  function getNumberOfCompletedTasks () {
+  function getNumberOfCompletedTasks() {
     let completedTasks = tasks.filter(task => task.isCompleted);
 
     return completedTasks.length;
   }
 
-  function renderNumberOfCompletedTasks () {
+  function renderNumberOfCompletedTasks() {
     if (tasks.length == 0) return "0";
 
     return `${getNumberOfCompletedTasks()} de ${tasks.length}`;
@@ -32,6 +32,7 @@ function App() {
       uuid: uuidv4(),
       isCompleted: false,
       content: taskTextInput,
+      deleteTask: handleDeleteTask
     }]);
 
     setTaskTextInput('');
@@ -39,6 +40,10 @@ function App() {
 
   function handleChangeNewTask (event: ChangeEvent<HTMLInputElement>) {
     setTaskTextInput(event.target.value);
+  }
+
+  function handleDeleteTask(uuid: string) {
+    setTasks(tasks.filter(task => task.uuid !== uuid));
   }
 
   return (
@@ -96,6 +101,7 @@ function App() {
                   uuid={task.uuid}
                   content={task.content}
                   isCompleted={task.isCompleted}
+                  deleteTask={handleDeleteTask}
                 />
               ))}
             </div>

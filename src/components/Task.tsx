@@ -7,6 +7,7 @@ export interface TaskProps {
     uuid?: string
     content: string
     isCompleted?: boolean
+    deleteTask: (uuid: string) => void
 };
 
 export const Task = (props: TaskProps) => {
@@ -14,7 +15,8 @@ export const Task = (props: TaskProps) => {
     const {
         content,
         isCompleted=false,
-        uuid=uuidv4()
+        uuid=uuidv4(),
+        deleteTask
     } = props;
 
     if (!isCompleted) return (
@@ -29,7 +31,7 @@ export const Task = (props: TaskProps) => {
                     {content}
                 </p>
             </div>
-            <div className={styles.boxRight}>
+            <div onClick={() => deleteTask(uuid)} className={styles.boxRight}>
                 <img src={iconTrash} alt="Ícone de Lixeira" />
             </div>
         </div>        
