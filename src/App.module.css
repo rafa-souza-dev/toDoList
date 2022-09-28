@@ -81,8 +81,13 @@ main .wrapper form button {
     cursor: pointer;
 }
 
-main .wrapper form button:hover {
+main .wrapper form button:not(:disabled):hover {
     background-color: var(--blue-500);
+}
+
+main .wrapper form button:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
 }
 
 main .wrapper div.tasksInfo {

@@ -39,7 +39,8 @@ function App() {
     setTaskTextInput('');
   }
 
-  function handleChangeNewTask (event: ChangeEvent<HTMLInputElement>) {
+  function handleChangeNewTask(event: ChangeEvent<HTMLInputElement>) {
+    event.target.setCustomValidity("");
     setTaskTextInput(event.target.value);
   }
 
@@ -59,6 +60,12 @@ function App() {
     setTasks(tasks.map(task => editTaskStatus(task, uuid)));
   }
 
+  function handleNewTaskInvalid(event: ChangeEvent<HTMLInputElement>) {
+    event.target.setCustomValidity("Este campo é obrigatório!")
+  }
+
+  const isTaskTextInputEmpty = taskTextInput.length === 0;
+
   return (
     <div>
       <header className={styles.mainHeader}>
@@ -75,8 +82,10 @@ function App() {
               placeholder='Adicione uma nova tarefa'
               value={taskTextInput}
               onChange={handleChangeNewTask}
+              onInvalid={handleNewTaskInvalid}
+              required
             />
-            <button>
+            <button disabled={isTaskTextInputEmpty}>
               Criar
               <img src={plus} alt="" />
             </button>
